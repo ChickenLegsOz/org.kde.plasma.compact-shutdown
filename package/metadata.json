@@ -15,7 +15,7 @@
         "Icon": "system-shutdown",
         "Id": "org.kde.plasma.compact-shutdown",
         "Name": "Compact ShutDown",
-        "Version": "1.1",
+        "Version": "1.2",
         "Website": "https://github.com/ChickenLegsOz/org.kde.plasma.compact-shutdown"
     },
     "KPackageStructure": "Plasma/Applet",

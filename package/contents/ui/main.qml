@@ -55,8 +55,7 @@ PlasmoidItem {
                 icon.name: "system-log-out"
                 text: i18n("Logout")
                 onClicked: {
-                    console.debug("Logout clicked");
-                    executable.exec("qdbus org.kde.ksmserver /KSMServer logout 0 0 2");
+                    executable.exec("qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logout");
                 }
                 visible: showLogout
                 Layout.fillWidth: true
@@ -68,7 +67,6 @@ PlasmoidItem {
                 text: i18n("Lock Screen")
                 icon.name: "system-lock-screen"
                 onClicked: {
-                    console.debug("Lock Screen clicked");
                     executable.exec("qdbus org.freedesktop.ScreenSaver /ScreenSaver Lock");
                 }
                 visible: showLockscreen
@@ -81,7 +79,6 @@ PlasmoidItem {
                 text: i18n("Suspend")
                 icon.name: "system-suspend"
                 onClicked: {
-                    console.debug("Suspend clicked");
                     executable.exec("qdbus org.kde.Solid.PowerManagement /org/freedesktop/PowerManagement Suspend");
                 }
                 visible: showSuspend
@@ -106,7 +103,7 @@ PlasmoidItem {
                 text: i18n("Reboot")
                 icon.name: "system-reboot"
                 onClicked: {
-                    executable.exec("qdbus org.kde.ksmserver /KSMServer logout 0 1 2");
+                    executable.exec("qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logoutAndReboot");
                 }
                 visible: showReboot
                 Layout.fillWidth: true
@@ -129,7 +126,7 @@ PlasmoidItem {
                 text: i18n("Shutdown")
                 icon.name: "system-shutdown"
                 onClicked: {
-                    executable.exec("qdbus org.kde.ksmserver /KSMServer logout 0 2 2");
+                    executable.exec("qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logoutAndShutdown");
                 }
                 visible: showShutdown
                 Layout.fillWidth: true
